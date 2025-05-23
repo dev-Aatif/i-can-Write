@@ -1,12 +1,13 @@
 {
   "posts": [
     {
-      "title": "Getting Started with Web Development",
-      "date": "2025-05-22",
-      "tags": ["Development"],
-      "description": "Learn the essential steps to begin your journey in web development...",
-      "path": "2025/may/blog-1.md",
-      "image": "/assets/blog-images/web-dev-intro.jpg"
+      "title": "Can AI Replace Software Developers?",
+      "date": "2025-05-23 14:24:41",
+      "tags": ["AI", "Development", "Technology"],
+      "description": "Exploring the impact of AI on software development and the future of human developers",
+      "path": "2025/may/ai/post.md",
+      "image": "https://via.placeholder.com/800x400",
+      "author": "dev-Aatif"
     }
   ]
 }
