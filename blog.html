@@ -26,49 +26,13 @@
     </header>
 
     <!-- Blog Section -->
-    <div class="blog-container">
+   <div class="blog-container">
         <h1>My Blog</h1>
-        <div class="blog-grid">
-            <article class="blog-post">
-                <img src="https://via.placeholder.com/400x200" alt="Blog Post 1">
-                <div class="post-content">
-                    <h2>Can Ai Replace Devlopers</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 22, 2025</span>
-                        <span><i class="far fa-folder"></i> Development</span>
-                    </div>
-                    <p>Will Ai Ever Replace DEvlopers?</p>
-                    <a href="https://github.com/dev-Aatif/i-can-write/blob/main/blogs/2025/may/Can-Ai-Replace-Devlopers" class="read-more">Read More</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <img src="https://via.placeholder.com/400x200" alt="Blog Post 2">
-                <div class="post-content">
-                    <h2>Modern JavaScript Features</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 20, 2025</span>
-                        <span><i class="far fa-folder"></i> JavaScript</span>
-                    </div>
-                    <p></p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-            </article>
-
-            <article class="blog-post">
-                <img src="https://via.placeholder.com/400x200" alt="Blog Post 3">
-                <div class="post-content">
-                    <h2>Responsive Design Tips</h2>
-                    <div class="post-meta">
-                        <span><i class="far fa-calendar"></i> May 18, 2025</span>
-                        <span><i class="far fa-folder"></i> CSS</span>
-                    </div>
-                    <p></p>
-                    <a href="#" class="read-more">Read More</a>
-                </div>
-            </article>
+        <div id="blog-grid" class="blog-grid">
+            <!-- Posts will be loaded here -->
         </div>
     </div>
+
 
   <footer id="footer-contact">
     <div class="footer-content">
@@ -91,5 +55,53 @@
         </div>
     </div>
 </footer>
+
+ <script>
+        async function loadBlogPosts() {
+            try {
+                // Fetch the posts.json file
+                const response = await fetch('blogs/posts.json');
+                const data = await response.json();
+                const blogGrid = document.getElementById('blog-grid');
+
+                // Clear existing content
+                blogGrid.innerHTML = '';
+
+                // Create HTML for each post
+                data.posts.forEach(post => {
+                    const postDate = new Date(post.date).toLocaleDateString('en-US', {
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    const postHTML = `
+                        <article class="blog-post">
+                            <img src="${post.image}" alt="${post.title}">
+                            <div class="post-content">
+                                <h2>${post.title}</h2>
+                                <div class="post-meta">
+                                    <span><i class="far fa-calendar"></i> ${postDate}</span>
+                                    <span><i class="far fa-folder"></i> ${post.tags[0]}</span>
+                                    <span><i class="far fa-user"></i> ${post.author}</span>
+                                </div>
+                                <p>${post.description}</p>
+                                <a href="blogs/${post.path.replace('.md', '.html')}" class="read-more">Read More</a>
+                            </div>
+                        </article>
+                    `;
+                    blogGrid.innerHTML += postHTML;
+                });
+            } catch (error) {
+                console.error('Error loading blog posts:', error);
+                document.getElementById('blog-grid').innerHTML = '<p>Error loading blog posts. Please try again later.</p>';
+            }
+        }
+
+        // Load posts when the page loads
+        document.addEventListener('DOMContentLoaded', loadBlogPosts);
+ </script>
+
+    
 </body>
 </html>
