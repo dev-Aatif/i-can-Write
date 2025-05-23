@@ -1,0 +1,129 @@
+/* Individual Blog Post Styles */
+.blog-post-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.full-blog-post {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.full-blog-post .post-header {
+    padding: 2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.full-blog-post h1 {
+    margin: 0 0 1rem;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    line-height: 1.2;
+}
+
+.full-blog-post .featured-image {
+    width: 100%;
+    max-height: 400px;
+    object-fit: cover;
+}
+
+.full-blog-post .post-content {
+    padding: 2rem;
+    line-height: 1.8;
+}
+
+/* Blog Content Styling */
+.post-content h2 {
+    color: #2c3e50;
+    margin: 2rem 0 1rem;
+    font-size: 1.8rem;
+}
+
+.post-content h3 {
+    color: #34495e;
+    margin: 1.5rem 0 1rem;
+    font-size: 1.5rem;
+}
+
+.post-content p {
+    margin: 1rem 0;
+    color: #444;
+}
+
+.post-content ul, 
+.post-content ol {
+    margin: 1rem 0;
+    padding-left: 2rem;
+}
+
+.post-content li {
+    margin: 0.5rem 0;
+    color: #444;
+}
+
+.post-content blockquote {
+    border-left: 4px solid #3498db;
+    margin: 1.5rem 0;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+    background: #f8f9fa;
+    color: #666;
+}
+
+.post-content code {
+    background: #f8f9fa;
+    padding: 0.2rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.9em;
+    color: #e74c3c;
+}
+
+.post-content pre {
+    background: #2c3e50;
+    color: #fff;
+    padding: 1rem;
+    border-radius: 4px;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+}
+
+.post-content pre code {
+    background: none;
+    color: #fff;
+    padding: 0;
+}
+
+/* Post Meta Information */
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.post-meta span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .full-blog-post h1 {
+        font-size: 2rem;
+    }
+
+    .post-meta {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .blog-post-container {
+        padding: 0 1rem;
+    }
+}
