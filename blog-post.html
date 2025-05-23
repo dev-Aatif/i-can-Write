@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post | dev-Aatif</title>
+    <link rel="stylesheet" href="/css/blog.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Keep your existing header -->
+   <header>
+        <nav>
+            <div>
+                <i class="fas fa-code"></i> dev-Aatif
+            </div>
+            <div>
+                <a href="index.html"><i class="fas fa-home"></i> Home</a>
+                <a href="about.html" class="active"><i class="fas fa-user"></i> About</a>
+                <a href="blog.html"><i class="fas fa-blog"></i> Blog</a>
+                <a href="#footer-contact"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <div class="blog-post-container">
+        <div id="blog-content">
+            <!-- Blog content will be loaded here -->
+        </div>
+    </div>
+
+    <!-- Keep your existing footer -->
+   <footer id="footer-contact">
+    <div class="footer-content">
+        <div class="contact-section">
+            <h3>Contact Information</h3>
+            <div class="contact-details">
+                <p><i class="fas fa-envelope"></i> Email: dev-aatif@example.com</p>
+                <p><i class="fas fa-phone"></i> Phone: +1 234 567 8900</p>
+                <p><i class="fas fa-location-dot"></i> Location: City, Country</p>
+            </div>
+            <div class="social-links">
+                <a href="https://github.com/dev-Aatif" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/dev-Aatif" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://twitter.com/dev-Aatif" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 dev-Aatif. All Rights Reserved.</p>
+            <p>Last Updated: 2025-05-22 16:42:26 UTC</p>
+        </div>
+    </div>
+     
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <script>
+        async function loadBlogPost() {
+            try {
+                const urlParams = new URLSearchParams(window.location.search);
+                const postPath = urlParams.get('post');
+                
+                const response = await fetch(`/blogs/${postPath}`);
+                const markdown = await response.text();
+                
+                document.getElementById('blog-content').innerHTML = marked(markdown);
+            } catch (error) {
+                console.error('Error loading blog post:', error);
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', loadBlogPost);
+    </script>
+</body>
+</html>
