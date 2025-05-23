@@ -1,0 +1,12 @@
+{
+  "posts": [
+    {
+      "title": "Getting Started with Web Development",
+      "date": "2025-05-22",
+      "tags": ["Development"],
+      "description": "Learn the essential steps to begin your journey in web development...",
+      "path": "2025/05/getting-started-with-web-development.md",
+      "image": "/assets/blog-images/web-dev-intro.jpg"
+    }
+  ]
+}
