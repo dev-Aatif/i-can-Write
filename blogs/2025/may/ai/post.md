@@ -1,6 +1,16 @@
+---
+title: "Can AI Really Replace Software Developers?"
+date: "2025-05-23 16:47:33"
+author: "dev-Aatif"
+tags: ["AI", "Development", "Technology"]
+image: "https://via.placeholder.com/800x400"
+description: "Exploring the impact of AI on software development and the future of human developers"
+---
+
 # Can AI Really Replace Software Developers?
 
-**Posted on August 15, 2023 | 5 min read**
+Recent advancements in AI-powered tools like GitHub Copilot, ChatGPT, and Amazon CodeWhisperer have sparked intense debates in the tech community...
+
 
 ![AI and human collaboration concept](https://via.placeholder.com/800x400)
 
