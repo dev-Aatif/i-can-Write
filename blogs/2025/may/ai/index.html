@@ -32,7 +32,25 @@
 
     <!-- Footer -->
     <footer id="footer-contact">
-        <!-- Your existing footer content -->
+        <div class="footer-content">
+            <div class="contact-section">
+                <h3>Contact Information</h3>
+                <div class="contact-details">
+                    <p><i class="fas fa-envelope"></i> Email: dev-aatif@example.com</p>
+                    <p><i class="fas fa-phone"></i> Phone: +1 234 567 8900</p>
+                    <p><i class="fas fa-location-dot"></i> Location: City, Country</p>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com/dev-Aatif" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://linkedin.com/in/dev-Aatif" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/dev-Aatif" target="_blank"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 dev-Aatif. All Rights Reserved.</p>
+                <p>Last Updated: 2025-05-23 17:12:16 UTC</p>
+            </div>
+        </div>
     </footer>
 
     <script>
@@ -42,8 +60,7 @@
                 const markdown = await response.text();
                 
                 // Extract front matter
-                const frontMatter = markdown.split('---')[1];
-                const content = markdown.split('---')[2];
+                const [_, frontMatter, content] = markdown.split('---');
                 
                 // Parse front matter
                 const meta = {};
@@ -54,6 +71,9 @@
                     }
                 });
 
+                // Parse tags from string to array if needed
+                const tags = meta.tags ? meta.tags.replace(/[\[\]]/g, '').split(',').map(t => t.trim()).join(', ') : '';
+
                 // Create HTML
                 const postHTML = `
                     <div class="post-header">
@@ -61,7 +81,7 @@
                         <div class="post-meta">
                             <span><i class="far fa-calendar"></i> ${new Date(meta.date).toLocaleDateString()}</span>
                             <span><i class="far fa-user"></i> ${meta.author}</span>
-                            <span><i class="far fa-folder"></i> ${meta.tags.replace('[', '').replace(']', '')}</span>
+                            <span><i class="far fa-folder"></i> ${tags}</span>
                         </div>
                     </div>
                     <img src="${meta.image}" alt="${meta.title}" class="featured-image">
