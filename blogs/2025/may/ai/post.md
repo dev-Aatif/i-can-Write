@@ -8,73 +8,133 @@ description: "Exploring the impact of AI on software development and the future 
 ---
 
 <style>
+:root {
+  --color-primary: #3498db;
+  --color-secondary: #2c3e50;
+  --color-text: #333;
+  --color-light: #7f8c8d;
+  --color-bg-light: #f8f9fa;
+  --color-border: #ecf0f1;
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 20px;
+  --space-sm: 0.5rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+}
+
+/* Base styles */
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-    line-height: 1.6;
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    color: #333;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: #fff;
+  max-width: min(800px, 90vw);
+  margin: 0 auto;
+  padding: var(--space-lg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography */
+h1, h2, h3 {
+  margin-top: 0;
+  line-height: 1.3;
 }
 
 h1 {
-    color: #2c3e50;
-    border-bottom: 2px solid #3498db;
-    padding-bottom: 10px;
-    font-size: 2.2em;
+  color: var(--color-secondary);
+  font-size: clamp(1.8rem, 5vw, 2.2rem);
+  border-bottom: 2px solid var(--color-primary);
+  padding-bottom: var(--space-sm);
+  margin-bottom: var(--space-md);
 }
 
 h2 {
-    color: #3498db;
-    margin-top: 1.5em;
-    padding-bottom: 0.3em;
-    border-bottom: 1px solid #ecf0f1;
-    font-size: 1.6em;
+  color: var(--color-primary);
+  font-size: clamp(1.4rem, 4vw, 1.6rem);
+  margin-top: var(--space-xl);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
 }
 
+/* Images */
 img {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    margin: 2em auto;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: var(--space-xl) auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-ul {
-    padding-left: 20px;
-    margin: 1em 0;
+img:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md), 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: var(--space-lg);
+  margin: var(--space-md) 0;
 }
 
 li {
-    margin: 0.5em 0;
-    line-height: 1.5;
+  margin: var(--space-sm) 0;
+  line-height: 1.5;
 }
 
+/* Blockquote/emphasis */
 p > em {
-    display: block;
-    margin: 2em 0;
-    padding: 1.5em;
-    background: #f8f9fa;
-    border-left: 4px solid #3498db;
-    color: #666;
-    border-radius: 0 4px 4px 0;
-    font-style: normal;
+  display: block;
+  margin: var(--space-xl) 0;
+  padding: var(--space-md);
+  background: var(--color-bg-light);
+  border-left: 4px solid var(--color-primary);
+  color: var(--color-light);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-style: normal;
+  box-shadow: var(--shadow-sm);
 }
 
+/* Utility classes */
 .post-meta {
-    color: #7f8c8d;
-    font-size: 0.9em;
-    margin: -10px 0 20px 0;
+  color: var(--color-light);
+  font-size: 0.9em;
+  margin: calc(var(--space-sm) * -1) 0 var(--space-md) 0;
 }
 
 .tag {
-    display: inline-block;
-    background: #ecf0f1;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    margin-right: 8px;
+  display: inline-block;
+  background: var(--color-border);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-lg);
+  font-size: 0.85em;
+  margin-right: var(--space-sm);
+  transition: background 0.2s ease;
+}
+
+.tag:hover {
+  background: #dfe6e9;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  body {
+    padding: var(--space-md);
+  }
+  
+  h1 {
+    padding-bottom: 0.5rem;
+  }
+  
+  p > em {
+    padding: var(--space-md) var(--space-sm);
+  }
 }
 </style>
 
