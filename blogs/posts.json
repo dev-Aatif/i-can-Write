@@ -1,13 +1,14 @@
 {
   "posts": [
     {
-      "title": "Can AI Replace Software Developers?",
-      "date": "2025-05-24",
-      "tags": ["AI", "Development", "Technology"],
-      "description": "Exploring the impact of AI on software development and the future of human developers",
-      "path": "2025/may/ai/post.md",
-      "image": "https://via.placeholder.com/800x400",
-      "author": "dev-Aatif"
+---
+title: "Can AI Really Replace Software Developers?"
+date: "2025-05-24"
+author: "dev-Aatif"
+tags: ["AI", "Development", "Technology"]
+image: "https://via.placeholder.com/800x400"
+description: "Exploring the impact of AI on software development and the future of human developers"
+---
     }
   ]
 }
