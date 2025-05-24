@@ -1,6 +1,6 @@
 ---
 title: "Can AI Really Replace Software Developers?"
-date: "2025-05-23 17:12:16"
+date: "2025-05-24"
 author: "dev-Aatif"
 tags: ["AI", "Development", "Technology"]
 image: "https://via.placeholder.com/800x400"
